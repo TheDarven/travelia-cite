@@ -1,0 +1,8 @@
+name: TraveliaCite
+version: 1.0.0
+author: TheDarven
+description: Plugin pour la cite de Travelia
+main: fr.thedarven.traveliacite.Cite
+commands:
+  points:
+    description: Permet de manipuler les points des joueurs.

@@ -1,0 +1,27 @@
+hologram_teams: # Hologramme des teams
+  x: 0 # Localisation en X
+  y: 0 # Localisation en Y
+  z: 0 # Localisation en Z
+  world_name: "world" # Nom du monde (nom du dossier)
+  title: "§6Classement des équipes" # Titre de l'hologram
+
+hologram_players: # Hologramme des meilleurs joueurs
+  nb_players: 10 # Nombre de joueur affichés
+  x: 0 # Localisation en X
+  y: 0 # Localisation en Y
+  z: 0 # Localisation en Z
+  world_name: "world" # Nom du monde (nom du dossier)
+  title: "§6Classement des joueurs" # Titre de l'hologram
+
+teams: #Liste des équipes
+  team1: # Une équipe
+    name: "Team1" # Nom
+    color: "§c" # Couleur (dispo ici, première colonne : https://minecraft.tools/en/color-code.php)
+    hologram:
+      x: 0 # Localisation en X
+      y: 0 # Localisation en Y
+      z: 0 # Localisation en Z
+      world_name: "world" # Nom du monde (nom du dossier)
+      title: "§6Classement de l'équipe {name}" # Titre de l'hologram
+    players: # Liste des joueurs de l'équipe
+      - "913198b3-dd6b-47f9-b5eb-6ea2aea0044d" # Le uuid d'un joueur (dispo ici : https://mcuuid.net/)
