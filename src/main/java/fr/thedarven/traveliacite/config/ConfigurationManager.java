@@ -22,14 +22,47 @@ public class ConfigurationManager {
     private final String DEFAULT_HOLOGRAM_PLAYERS_TEAM_TITLE = "§6Classement de l'équipe {name}";
 
     private final Cite main;
+    private final SpawnLocation spawnLocation;
 
     public ConfigurationManager(Cite main) {
         this.main = main;
+        this.spawnLocation = new SpawnLocation();
     }
 
     public void loadConfig() {
+        loadSpawnProtection(this.main.getConfig());
         loadTeams(this.main.getConfig());
         loadHolograms(this.main.getConfig());
+    }
+
+    public SpawnLocation getSpawnLocation() {
+        return this.spawnLocation;
+    }
+
+    private void loadSpawnProtection(FileConfiguration fileConfiguration) {
+        ConfigurationSection spawnProtectionSection = fileConfiguration.getConfigurationSection("spawn_protection");
+        if (Objects.isNull(spawnProtectionSection)) {
+            return;
+        }
+
+        String worldName = spawnProtectionSection.getString("world_name");
+        if (Objects.isNull(worldName)) {
+            return;
+        }
+        World world = Bukkit.getWorld(worldName);
+        if (Objects.isNull(world)) {
+            return;
+        }
+
+        double x1 = spawnProtectionSection.getDouble("x1");
+        double y1 = spawnProtectionSection.getDouble("y1");
+        double z1 = spawnProtectionSection.getDouble("z1");
+        double x2 = spawnProtectionSection.getDouble("x2");
+        double y2 = spawnProtectionSection.getDouble("y2");
+        double z2 = spawnProtectionSection.getDouble("z2");
+
+        this.spawnLocation.setLocation1(new Location(world, x1, y1, z1));
+        this.spawnLocation.setLocation2(new Location(world, x2, y2, z2));
     }
 
     private void loadTeams(FileConfiguration fileConfiguration) {

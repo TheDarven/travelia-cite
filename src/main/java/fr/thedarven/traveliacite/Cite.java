@@ -54,6 +54,10 @@ public class Cite extends JavaPlugin {
         this.hologramManager.removeAll();
     }
 
+    public ConfigurationManager getConfigurationManager() {
+        return this.configurationManager;
+    }
+
     public PlayerManager getPlayerManager() {
         return this.playerManager;
     }

@@ -37,4 +37,65 @@ public class ListenerManager {
         return this.joinQuitListener;
     }
 
+    // BlockBreakEvent
+    // BlockPlaceEvent
+    // BlockFromToEvent
+    // FluidLevelChangeEvent
+    // SignChangeEvent
+    // StructureGrowEvent
+    // PortalCreateEvent
+    // HangingPlaceEvent
+    // HangingBreakEvent
+
+    // BlockBurnEvent
+    // BlockCanBuildEvent
+    // BlockDamageEvent
+    // BlockExplodeEvent
+    // BlockFertilizeEvent
+    // BlockFormEvent
+    // BlockGrowEvent
+    // BlockPhysicsEvent
+    // BlockPistonRetractEvent
+    // BlockPistonExtendEvent
+    // BlockRedstoneEvent
+    // BlockShearEntityEvent
+    // BlockSpreadEvent
+    // CauldronLevelChangeEvent
+    // EntityBlockFormEvent
+    // LeavesDecayEvent
+    // MoistureChangeEvent
+    // SpongeAbsorbEvent
+    // RaidTriggerEvent
+    // BrewEvent
+    // BrewingStandFuelEvent
+    // FurnaceBurnEvent
+    // InventoryPickupItemEvent
+    // BlockDispenseArmorEvent
+    // BlockDispenseEvent
+    // BlockFadeEvent         -    Called when a block fades, melts or disappears based on world conditions
+
+    // PlayerBedEnterEvent
+    // PlayerBucketEvent
+    // PlayerEggThrowEvent
+    // PlayerHarvestBlockEvent
+    // PlayerShearEntityEvent
+    // PlayerTakeLecternBookEvent
+
+    // CreatureSpawnEvent
+    // CreeperPowerEvent
+    // EntityBreakDoorEvent
+    // EntityChangeBlockEvent
+    // EntityExplodeEvent
+    // EntityPlaceEvent
+    // EntityTransformEvent
+    // ExplosionPrimeEvent
+    // LingeringPotionSplashEvent
+    // PotionSplashEvent
+    // SheepDyeWoolEvent
+    // PlayerInteractAtEntityEvent
+    // PlayerInteractEntityEvent (+ PlayerArmorStandManipulateEvent) --> anvil, enchantment table, cuire, open inv ?
+    // PlayerInteractEvent
+
+
+    // https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/event/vehicle/VehicleEvent.html
 }

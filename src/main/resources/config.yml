@@ -1,3 +1,12 @@
+spawn_protection:
+  world_name: "world" # Nom du monde (nom du dossier)
+  x1: 0
+  y1: 0
+  z1: 0
+  x2: 0
+  y2: 0
+  z2: 0
+
 hologram_teams: # Hologramme des teams
   x: 0 # Localisation en X
   y: 0 # Localisation en Y
