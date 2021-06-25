@@ -3,6 +3,9 @@ version: 1.0.0
 author: TheDarven
 description: Plugin pour la cite de Travelia
 main: fr.thedarven.traveliacite.Cite
+api-version: 1.16
 commands:
   points:
     description: Permet de manipuler les points des joueurs.
+  debug:
+    description: Permet d'afficher en console le nom des events qui peuvent causer de la latence.
