@@ -70,4 +70,7 @@ public class Cite extends JavaPlugin {
         return this.hologramManager;
     }
 
+    public ListenerManager getListenerManager() {
+        return listenerManager;
+    }
 }

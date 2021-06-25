@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 
 public class PointsCommand implements CommandExecutor, TabCompleter {
 
-    private static final String NOT_OPERATOR = "§cTu n'es pas autorisé à utiliser cette commande (mais bien essayé), petit filou va !";
+    public static final String NOT_OPERATOR = "§cTu n'es pas autorisé à utiliser cette commande (mais bien essayé), petit filou va !";
     private static final String POINTS_COMMAND_USAGE = "§cUtilisation : /points [add|remove|set] <name> <amount>.";
     private static final String ACTION_NOT_FOUND = "§cL'action spécifiée n'a pas été trouvé.";
     private static final String PLAYER_NOT_FOUND = "§cL'utilisateur spécifié n'a pas été trouvé.";
