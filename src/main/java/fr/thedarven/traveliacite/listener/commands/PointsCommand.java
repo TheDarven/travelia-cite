@@ -56,17 +56,17 @@ public class PointsCommand implements CommandExecutor, TabCompleter {
 
             switch (oAction.get()) {
                 case ADD:
-                    System.out.println("[Cite] " + amount + " emeraudes ajoutees a " + target.getName() + " par " + sender.getName());
+                    System.out.println("[Cite] " + amount + " emeraudes ajoutees a " + target.getName() + " par " + sender.getName() + ". (" + target.getEmeralds() + "E)");
                     target.addEmeralds(amount);
                     sender.sendMessage("§2" + amount + "§a émeraudes on été ajoutées au compte de §2" + target.getName() + "§a avec succès.");
                     break;
                 case SET:
-                    System.out.println("[Cite] Nouveau montant d'emeraudes pour " + target.getName() + " par " + sender.getName() + " : " + amount + " émeraudes.");
+                    System.out.println("[Cite] Nouveau montant d'emeraudes pour " + target.getName() + " par " + sender.getName() + " : " + amount + " émeraudes. (" + target.getEmeralds() + "E)");
                     target.setEmeralds(amount);
                     sender.sendMessage("§2" + target.getName() + "§a possède désormais §2" + amount + "§a émeraudes.");
                     break;
                 case REMOVE:
-                    System.out.println("[Cite] " + amount + " emeraudes retirees a " + target.getName() + " par " + sender.getName());
+                    System.out.println("[Cite] " + amount + " emeraudes retirees a " + target.getName() + " par " + sender.getName() + ". (" + target.getEmeralds() + "E)");
                     target.addEmeralds(-amount);
                     sender.sendMessage("§2" + amount + "§a émeraudes on été enlevées au compte de §2" + target.getName() + "§a avec succès.");
                     break;

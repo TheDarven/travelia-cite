@@ -4,6 +4,7 @@ import fr.thedarven.traveliacite.Cite;
 import fr.thedarven.traveliacite.listener.commands.DebugCommand;
 import fr.thedarven.traveliacite.listener.commands.PointsCommand;
 import fr.thedarven.traveliacite.listener.listeners.ArmorStandInteractListener;
+import fr.thedarven.traveliacite.listener.listeners.DeposePointListener;
 import fr.thedarven.traveliacite.listener.listeners.JoinQuitListener;
 import fr.thedarven.traveliacite.listener.listeners.SpawnProtectionListener;
 import org.bukkit.Bukkit;
@@ -29,6 +30,7 @@ public class ListenerManager {
         pluginManager.registerEvents(this.joinQuitListener, this.main);
         pluginManager.registerEvents(new ArmorStandInteractListener(this.main), this.main);
         pluginManager.registerEvents(new SpawnProtectionListener(this.main), this.main);
+        pluginManager.registerEvents(new DeposePointListener(this.main), this.main);
     }
 
     private void initCommands() {

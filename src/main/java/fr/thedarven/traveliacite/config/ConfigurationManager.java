@@ -23,16 +23,24 @@ public class ConfigurationManager {
 
     private final Cite main;
     private final SpawnLocation spawnLocation;
+    private Location pnjDeposeLocation;
 
     public ConfigurationManager(Cite main) {
         this.main = main;
         this.spawnLocation = new SpawnLocation();
     }
 
+    public Location getPnjDeposeLocation() {
+        return pnjDeposeLocation;
+    }
+
     public void loadConfig() {
-        loadSpawnProtection(this.main.getConfig());
-        loadTeams(this.main.getConfig());
-        loadHolograms(this.main.getConfig());
+        FileConfiguration configuration = this.main.getConfig();
+
+        loadSpawnProtection(configuration);
+        loadPnjDeposeLocation(configuration);
+        loadTeams(configuration);
+        loadHolograms(configuration);
     }
 
     public SpawnLocation getSpawnLocation() {
@@ -63,6 +71,11 @@ public class ConfigurationManager {
 
         this.spawnLocation.setLocation1(new Location(world, x1, y1, z1));
         this.spawnLocation.setLocation2(new Location(world, x2, y2, z2));
+    }
+
+    private void loadPnjDeposeLocation(FileConfiguration fileConfiguration) {
+        ConfigurationSection pnjDeposeSection = fileConfiguration.getConfigurationSection("pnj_depose");
+        this.pnjDeposeLocation = getLocationOfSection(pnjDeposeSection);
     }
 
     private void loadTeams(FileConfiguration fileConfiguration) {

@@ -7,6 +7,12 @@ spawn_protection:
   y2: 0
   z2: 0
 
+pnj_depose: # Position du PNJ pour déposer les points
+  world_name: "world" # Nom du monde (nom du dossier)
+  x: 0
+  y: 0
+  z: 0
+
 hologram_teams: # Hologramme des teams
   x: 0 # Localisation en X
   y: 0 # Localisation en Y
