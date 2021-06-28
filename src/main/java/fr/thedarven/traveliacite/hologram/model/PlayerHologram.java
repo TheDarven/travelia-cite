@@ -14,7 +14,7 @@ import java.util.Objects;
 
 public class PlayerHologram extends Hologram<PlayerCite> {
 
-    private final static String HOLOGRAM_FORMAT = "{name}: " + ChatColor.GOLD + "{amount}" + ChatColor.DARK_GREEN + " Emeraudes";
+    private final static String HOLOGRAM_FORMAT = "{name}: " + ChatColor.GOLD + "{amount}" + ChatColor.DARK_GREEN + " Points";
     private final int nbPlayers;
 
     public PlayerHologram(Cite cite, HologramManager hologramManager, Location location, int nbPlayers, String title) {

@@ -42,33 +42,23 @@ public class DeposePointListener implements Listener {
 
                 for (int i = 0; i < playerInventory.getSize(); i++) {
                     ItemStack item = playerInventory.getItem(i);
-                    if (Objects.isNull(item) || item.getType() == Material.AIR) {
+                    if (Objects.isNull(item) || item.getType() != Material.HAY_BLOCK) {
                         continue;
                     }
 
-                    int points = 0;
-
-                    if (item.getType() == Material.EMERALD) {
-                        points = 1;
-                    } else if (item.getType() == Material.EMERALD_BLOCK) {
-                        points = 9;
-                    } else {
-                        continue;
-                    }
-
-                    totalPoints += item.getAmount() * points;
+                    totalPoints += item.getAmount();
                     playerInventory.setItem(i, null);
                 }
 
                 if (totalPoints > 0) {
                     PlayerCite playerCite = this.main.getPlayerManager().getAndCreatePlayerCiteByPlayer(player);
-                    System.out.println("[Cite] " + player.getName() + " a déposé " + totalPoints + "emeraudes. (" + playerCite.getEmeralds() + "E)");
+                    System.out.println("[Cite] " + player.getName() + " a déposé " + totalPoints + " points. (" + playerCite.getEmeralds() + "P)");
                     playerCite.addEmeralds(totalPoints);
-                    player.sendMessage("§2" + totalPoints + "§a émeraudes on été déposées sur votre compte.");
+                    player.sendMessage("§2" + totalPoints + "§a points ont été déposés sur votre compte.");
                     Objects.requireNonNull(clickedPnjLocation.getWorld())
                             .spawnParticle(Particle.VILLAGER_HAPPY, clickedPnjLocation.add(0, 2, 0),10, 0.5, 0.25, 0.5);
                 } else {
-                    player.sendMessage("§eVous n'avez aucune émeraudes on déposer sur vous.");
+                    player.sendMessage("§eVous n'avez aucun point on déposer sur vous.");
                 }
             }
         }

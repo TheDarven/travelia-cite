@@ -14,7 +14,7 @@ import java.util.Objects;
 
 public class TeamHologram extends Hologram<TeamCite> {
 
-    private final static String HOLOGRAM_FORMAT = "{name}: " + ChatColor.GOLD + "{amount}" + ChatColor.DARK_GREEN + " Emeraudes";
+    private final static String HOLOGRAM_FORMAT = "{name}: " + ChatColor.GOLD + "{amount}" + ChatColor.DARK_GREEN + " Points";
 
     public TeamHologram(Cite cite, HologramManager hologramManager, Location location, String title) {
         super(cite, hologramManager, location, title);
