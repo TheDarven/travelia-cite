@@ -102,6 +102,6 @@ public class TeamCite implements IHologramEntityValue {
 
     @Override
     public String getName() {
-        return this.name;
+        return this.color + this.name + "§r§f";
     }
 }
