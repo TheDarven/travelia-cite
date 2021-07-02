@@ -39,3 +39,4 @@ build/
 !**/src/main/**
 !**/src/test/**
 src/main/resources/config.properties
+/bin/
