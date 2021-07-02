@@ -34,6 +34,7 @@ public class PlayerTeamHologram extends Hologram<PlayerCite> {
         int nbDisplayPlayers = playersList.size();
         for (int i = 0; i < nbDisplayPlayers; i++) {
             PlayerCite playerCite = playersList.get(i);
+            if(!playerCite.isDirty()) continue;
             HologramEntityValue<PlayerCite> entity = this.entities.get(playerCite);
             if (Objects.isNull(entity)) {
                 entity = new HologramEntityValue<>(HOLOGRAM_FORMAT, playerCite, this.location.clone());
@@ -42,6 +43,7 @@ public class PlayerTeamHologram extends Hologram<PlayerCite> {
             entity.updateName();
             setPosition(i + 1, entity);
             entity.show();
+            playerCite.setDirty(false);
         }
     }
 }

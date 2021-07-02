@@ -22,5 +22,7 @@ public class HologramEntityValue<T extends IHologramEntityValue> extends Hologra
         }
         this.armorStand.setCustomName(customName);
     }
+    
+    
 
 }

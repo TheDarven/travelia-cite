@@ -11,33 +11,30 @@ public class PlayerCite implements IHologramEntityValue, Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private transient Cite main;
+    @SuppressWarnings("unused")
+	private transient Cite main;
+    private transient TeamCite team;
+    private transient boolean dirty = false;
+    
     private final UUID uuid;
     private String name;
     private int emeralds;
-    private transient TeamCite team;
 
     public PlayerCite(UUID uuid, String name, Cite main) {
         this.main = main;
         this.uuid = uuid;
         this.name = name;
         this.emeralds = 0;
+        this.dirty = true;
     }
 
     public void addEmeralds(int amount) {
-        this.emeralds += amount;
-        if (this.emeralds < 0) {
-            this.emeralds = 0;
-        }
-        this.main.getHologramManager().updateHolograms();
+        setEmeralds(this.emeralds + amount);
     }
 
     public void setEmeralds(int amount) {
-        this.emeralds = amount;
-        if (this.emeralds < 0) {
-            this.emeralds = 0;
-        }
-        this.main.getHologramManager().updateHolograms();
+        this.emeralds = Math.max(amount, 0);
+        this.setDirty(true);
     }
 
     public int getEmeralds() {
@@ -73,4 +70,13 @@ public class PlayerCite implements IHologramEntityValue, Serializable {
     public void setMain(Cite main) {
         this.main = main;
     }
+
+    public void setDirty(boolean d) {
+    	this.dirty = d;
+    }
+    
+	@Override
+	public boolean isDirty() {
+		return this.dirty;
+	}
 }

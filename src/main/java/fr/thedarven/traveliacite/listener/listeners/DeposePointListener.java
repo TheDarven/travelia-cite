@@ -62,10 +62,10 @@ public class DeposePointListener implements Listener {
     	player.getInventory().remove(stack);
     	stack.setAmount(0);
     	stack.setType(Material.AIR);
-    	
     }
     
     public boolean isStackValid(ItemStack stack) {
+    	if(Objects.isNull(stack)) return false;
     	if(stack.getType() == Material.HAY_BLOCK) return false;
     	if(stack.getAmount() <= 0) return false;
     	ItemMeta meta = stack.getItemMeta();
